@@ -1,14 +1,29 @@
+<div align="center">
+
 # ShelfMind AI 🚀
+### The Intelligent Operating System for Modern Retailers
 
-ShelfMind AI is an ultra-premium, intelligent inventory and demand-forecasting SaaS platform. It combines traditional machine learning (ARIMA) for precise sales forecasting with Generative AI (Gemini 1.5 Flash) for conversational insights and smart reorder recommendations.
+[![ShelfMind-AI Powered](https://img.shields.io/badge/ShelfMind-AI%20Powered-7c3aed?style=for-the-badge)](https://github.com/Armantech10/shelfmind-ai)
+[![Status-Live MVP](https://img.shields.io/badge/Status-Live%20MVP-22c55e?style=for-the-badge)](https://github.com/Armantech10/shelfmind-ai)
+[![AI-Gemini 1.5 Flash](https://img.shields.io/badge/AI-Gemini%201.5%20Flash-4285F4?style=for-the-badge&logo=google)](https://github.com/Armantech10/shelfmind-ai)
+[![ML-ARIMA Forecasting](https://img.shields.io/badge/ML-ARIMA%20Forecasting-f59e0b?style=for-the-badge)](https://github.com/Armantech10/shelfmind-ai)
 
-## 🌟 Key Features
+**ShelfMind AI** is an ultra-premium, intelligent inventory and demand-forecasting SaaS platform. It combines classical statistical forecasting (ARIMA) with state-of-the-art Generative AI (Gemini 1.5 Flash) to help retailers eliminate stockouts and optimize inventory overhead.
 
-- **Demand Forecasting:** Automated ARIMA models trained on historical sales.
-- **Smart Reorder Engine:** Calculates precise reorder quantities based on safety stock and stockout risk.
-- **Automated Alerts:** Background scanning flags low stock, expiry warnings, and demand spikes.
-- **AI Business Insights:** Generates actionable reports from complex inventory data.
-- **Conversational Assistant:** Chat directly with your inventory using the AI assistant.
+[Explainer Video](https://github.com/Armantech10/shelfmind-ai) • [Live Demo](https://github.com/Armantech10/shelfmind-ai) • [Documentation](https://github.com/Armantech10/shelfmind-ai)
+
+</div>
+
+---
+
+## ✨ Key Features
+
+- **🧠 Demand Forecasting:** Automated ARIMA models trained on historical sales to predict future needs with precision.
+- **⚡ Smart Reorder Engine:** Real-time stock level monitoring with automated reorder point calculations based on safety stock and stockout risk.
+- **📊 AI Business Insights:** Transform complex inventory data into actionable executive summaries using Gemini 1.5 Flash.
+- **💬 Conversational Assistant:** Chat directly with your inventory. Ask things like *"Which products should I reorder today?"* or *"What was my revenue trend last month?"*.
+- **🔔 Proactive Alerts:** Background scanning flags low stock, expiry warnings, and demand spikes before they become problems.
+- **📱 Premium Experience:** A high-performance, responsive dashboard built with Next.js 14 and Framer Motion.
 
 ---
 
@@ -18,60 +33,114 @@ ShelfMind AI is an ultra-premium, intelligent inventory and demand-forecasting S
 - **Framework:** Next.js 14+ (App Router)
 - **Styling:** Tailwind CSS (Premium Dark Mode)
 - **Animations:** Framer Motion
-- **Charts:** Recharts
+- **Data Viz:** Recharts (Interactive Area & Bar Charts)
 
 ### Backend
-- **Framework:** FastAPI (Python)
-- **Database:** SQLAlchemy & SQLite/PostgreSQL
-- **AI/ML:** statsmodels (ARIMA), Google Gemini 1.5 Flash
+- **Core:** FastAPI (Python 3.10+)
+- **Database:** SQLAlchemy with SQLite/PostgreSQL
+- **AI/ML:** Statsmodels (ARIMA), Google Gemini 1.5 Flash API
+- **Processing:** Pandas & NumPy
+
+---
+
+## 🏗 System Architecture
+
+```mermaid
+graph TD
+    User((User)) --> NextJS[Next.js Frontend]
+    NextJS --> FastAPI[FastAPI Backend]
+    FastAPI --> SQLite[(SQLite DB)]
+    FastAPI --> ARIMA[ARIMA Forecasting]
+    FastAPI --> Gemini[Gemini 1.5 Flash AI]
+    ARIMA --> Insights[Demand Insights]
+    Gemini --> Chat[Conversational Assistant]
+```
 
 ---
 
 ## 🚀 Quick Start
 
-### Option 1: Docker (Recommended)
+### 🐳 Using Docker (Recommended)
 
-1. Clone the repository and navigate into it.
-2. Create a `.env` file in the root based on `.env.example`:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Armantech10/shelfmind-ai.git
+   cd shelfmind-ai
+   ```
+
+2. Configure Environment:
    ```bash
    cp .env.example .env
+   # Add your GEMINI_API_KEY to the .env file
    ```
-3. Add your `GEMINI_API_KEY` to the `.env` file.
-4. Start the services:
+
+3. Launch:
    ```bash
    docker-compose up --build
    ```
 
-### Option 2: Manual Setup
+### 🛠 Manual Setup
 
 #### Backend
-1. `cd backend`
-2. `pip install -r requirements.txt`
-3. `python seed.py` (to create demo data)
-4. `uvicorn main:app --reload`
+```bash
+cd backend
+pip install -r requirements.txt
+python seed.py  # Populate demo data
+uvicorn main:app --reload
+```
 
 #### Frontend
-1. `cd frontend`
-2. `npm install`
-3. `npm run dev`
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
 ---
 
 ## 🔑 Environment Variables
 
-| Variable | Description | Location |
-|----------|-------------|----------|
-| `SECRET_KEY` | JWT Signing Key | Backend |
-| `GEMINI_API_KEY` | Google AI Studio API Key | Backend |
-| `DATABASE_URL` | SQLAlchemy Connection String | Backend |
-| `NEXT_PUBLIC_API_URL` | Backend API Endpoint | Frontend |
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `SECRET_KEY` | JWT signing key for auth | `shelfmind-super-secret` |
+| `GEMINI_API_KEY` | Google AI Studio API Key | Required |
+| `DATABASE_URL` | SQLite or PostgreSQL connection string | `sqlite:///./shelfmind.db` |
+| `NEXT_PUBLIC_API_URL`| Backend API Endpoint | `http://localhost:8000` |
 
 ---
 
 ## 📸 Screenshots
-*(Add screenshots here after deployment)*
+
+<div align="center">
+
+### Landing Page
+![Landing](screenshots/landing.png)
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Sales Forecasts
+![Forecasts](screenshots/forecasts.png)
+
+### AI Insights
+![Insights](screenshots/insights.png)
+
+### AI Assistant
+![Assistant](screenshots/assistant.png)
+
+### Inventory Management
+![Inventory](screenshots/inventory.png)
+
+</div>
 
 ---
 
 ## ⚖️ License
-MIT License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+<div align="center">
+Built with ❤️ for the future of retail.
+</div>
