@@ -133,8 +133,6 @@ npm run dev
 <img width="1470" height="873" alt="assistants" src="https://github.com/user-attachments/assets/c63123ce-d671-4fcf-9f18-a76b15b4df13" />
 
 
-### Inventory Management
-![Inventory](screenshots/inventory.png)
 
 </div>
 
