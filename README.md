@@ -122,14 +122,16 @@ npm run dev
 
 
 ### Sales Forecasts
-![Forecasts](screenshots/forecasts.png)
+<img width="1470" height="873" alt="forecasts" src="https://github.com/user-attachments/assets/ca588f78-417a-43bd-99d9-ed7acec6ac23" />
+
 
 ### AI Insights
 <img width="1470" height="873" alt="insights" src="https://github.com/user-attachments/assets/b215ef7c-14e6-4215-8562-e0b16a1f9757" />
 
 
 ### AI Assistant
-![Assistant](screenshots/assistant.png)
+<img width="1470" height="873" alt="assistants" src="https://github.com/user-attachments/assets/c63123ce-d671-4fcf-9f18-a76b15b4df13" />
+
 
 ### Inventory Management
 ![Inventory](screenshots/inventory.png)
