@@ -114,7 +114,8 @@ npm run dev
 <div align="center">
 
 ### Landing Page
-![Landing](screenshots/landing.png)
+<img width="1470" height="873" alt="landing" src="https://github.com/user-attachments/assets/db3c966e-9cc8-4a42-b949-97c91bfac421" />
+
 
 ### Dashboard
 ![Dashboard](screenshots/dashboard.png)
