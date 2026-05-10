@@ -1,0 +1,35 @@
+# Environments
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Dependency directories
+node_modules/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Next.js build output
+.next/
+out/
+
+# Database
+*.db
+*.db-journal
+
+# Python
+*.pkl
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
