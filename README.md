@@ -118,13 +118,15 @@ npm run dev
 
 
 ### Dashboard
-![Dashboard](screenshots/dashboard.png)
+<img width="1470" height="873" alt="dashboard" src="https://github.com/user-attachments/assets/8c7e08c3-b7cd-42ef-8998-285c8a052908" />
+
 
 ### Sales Forecasts
 ![Forecasts](screenshots/forecasts.png)
 
 ### AI Insights
-![Insights](screenshots/insights.png)
+<img width="1470" height="873" alt="insights" src="https://github.com/user-attachments/assets/b215ef7c-14e6-4215-8562-e0b16a1f9757" />
+
 
 ### AI Assistant
 ![Assistant](screenshots/assistant.png)
