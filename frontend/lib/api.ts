@@ -304,7 +304,10 @@ export interface ChatMessage {
 export async function sendChatMessage(message: string, history: ChatMessage[]): Promise<string> {
 const res = await fetch(`${API_URL}/api/assistant`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+  "Content-Type": "application/json",
+  "Authorization": `Bearer ${localStorage.getItem("token")}`,
+},
     body: JSON.stringify({ message, history }),
   });
   if (!res.ok) {
