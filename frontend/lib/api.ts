@@ -302,7 +302,7 @@ export interface ChatMessage {
 }
 
 export async function sendChatMessage(message: string, history: ChatMessage[]): Promise<string> {
-  const res = await fetch(`${API_URL}/api/chat`, {
+const res = await fetch(`${API_URL}/api/assistant`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message, history }),
