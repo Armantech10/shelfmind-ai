@@ -1,4 +1,4 @@
-const API_URL = "";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://shelfmind-ai.onrender.com";
 
 export interface AuthResponse {
   access_token: string;
