@@ -98,7 +98,9 @@ export async function getProducts(search?: string, category?: string, page = 1, 
   params.append("page", page.toString());
   params.append("page_size", pageSize.toString());
 
-  const res = await fetch(`${API_URL}/api/products?${params.toString()}`);
+ const res = await fetch(`${API_URL}/api/products?${params.toString()}`, {
+  headers: getAuthHeaders(),
+});
   if (!res.ok) throw new Error("Failed to fetch products");
   return res.json();
 }
@@ -106,7 +108,7 @@ export async function getProducts(search?: string, category?: string, page = 1, 
 export async function createProduct(data: Partial<Product>): Promise<Product> {
   const res = await fetch(`${API_URL}/api/products/`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+   headers: getAuthHeaders(),
     body: JSON.stringify(data),
   });
   if (!res.ok) {
@@ -119,7 +121,7 @@ export async function createProduct(data: Partial<Product>): Promise<Product> {
 export async function updateProduct(id: number, data: Partial<Product>): Promise<Product> {
   const res = await fetch(`${API_URL}/api/products/${id}`, {
     method: "PUT",
-    headers: { "Content-Type": "application/json" },
+    headers: getAuthHeaders(),
     body: JSON.stringify(data),
   });
   if (!res.ok) {
@@ -131,7 +133,7 @@ export async function updateProduct(id: number, data: Partial<Product>): Promise
 
 export async function deleteProduct(id: number): Promise<void> {
   const res = await fetch(`${API_URL}/api/products/${id}`, {
-    method: "DELETE",
+    headers: getAuthHeaders(),
   });
   if (!res.ok) throw new Error("Failed to delete product");
 }
@@ -288,7 +290,10 @@ export interface ReorderRecommendation {
 }
 
 export async function generateInsights(): Promise<AIInsight[]> {
-  const res = await fetch(`${API_URL}/api/insights/generate`, { method: "POST" });
+  const res = await fetch(`${API_URL}/api/insights/generate`, {
+  method: "POST",
+  headers: getAuthHeaders(),
+});
   if (!res.ok) {
     const err = await res.json();
     throw new Error(err.detail || "Failed to generate insights");
@@ -297,7 +302,9 @@ export async function generateInsights(): Promise<AIInsight[]> {
 }
 
 export async function getInsights(): Promise<AIInsight[]> {
-  const res = await fetch(`${API_URL}/api/insights`);
+const res = await fetch(`${API_URL}/api/insights`, {
+  headers: getAuthHeaders(),
+});
   if (!res.ok) throw new Error("Failed to fetch insights");
   return res.json();
 }
