@@ -23,7 +23,11 @@ export async function apiLogin(email: string, password: string): Promise<AuthRes
     const err = await res.json();
     throw new Error(err.detail || "Login failed");
   }
-  return res.json();
+const data = await res.json();
+
+localStorage.setItem("token", data.access_token);
+
+return data;
 }
 
 export async function apiRegister(
