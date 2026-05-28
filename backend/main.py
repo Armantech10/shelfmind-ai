@@ -26,7 +26,7 @@ app.add_middleware(
     allow_origins=[
         FRONTEND_URL,
         "http://localhost:3000",
-        "https://*.vercel.app",
+        "https://shelfmind-ai.vercel.app",
         "capacitor://localhost",
         "http://localhost"
     ],
