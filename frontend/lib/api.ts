@@ -180,13 +180,17 @@ export interface ForecastResponse {
 }
 
 export async function getAllForecasts(): Promise<ForecastResponse[]> {
-  const res = await fetch(`${API_URL}/api/forecasts`);
+  const res = await fetch(`${API_URL}/api/forecasts`, {
+  headers: getAuthHeaders(),
+});
   if (!res.ok) throw new Error("Failed to fetch forecasts");
   return res.json();
 }
 
 export async function getProductForecast(productId: number): Promise<ForecastResponse> {
-  const res = await fetch(`${API_URL}/api/forecasts/${productId}`);
+  const res = await fetch(`${API_URL}/api/forecasts/${productId}`, {
+  headers: getAuthHeaders(),
+});
   if (!res.ok) throw new Error("Failed to fetch product forecast");
   return res.json();
 }
@@ -221,31 +225,41 @@ export interface InventoryTurnover {
 }
 
 export async function getAnalyticsSummary(): Promise<AnalyticsSummary> {
-  const res = await fetch(`${API_URL}/api/analytics/summary`);
+ const res = await fetch(`${API_URL}/api/analytics/summary`, {
+  headers: getAuthHeaders(),
+})
   if (!res.ok) throw new Error("Failed to fetch analytics summary");
   return res.json();
 }
 
 export async function getRevenueTrend(): Promise<RevenueTrend[]> {
-  const res = await fetch(`${API_URL}/api/analytics/revenue-trend`);
+  const res = await fetch(`${API_URL}/api/analytics/revenue-trend`, {
+  headers: getAuthHeaders(),
+});
   if (!res.ok) throw new Error("Failed to fetch revenue trend");
   return res.json();
 }
 
 export async function getTopProducts(): Promise<TopProduct[]> {
-  const res = await fetch(`${API_URL}/api/analytics/top-products`);
+  const res = await fetch(`${API_URL}/api/analytics/top-products`, {
+  headers: getAuthHeaders(),
+});
   if (!res.ok) throw new Error("Failed to fetch top products");
   return res.json();
 }
 
 export async function getSlowMovers(): Promise<TopProduct[]> {
-  const res = await fetch(`${API_URL}/api/analytics/slow-movers`);
+  const res = await fetch(`${API_URL}/api/analytics/slow-movers`, {
+  headers: getAuthHeaders(),
+});
   if (!res.ok) throw new Error("Failed to fetch slow movers");
   return res.json();
 }
 
 export async function getInventoryTurnover(): Promise<InventoryTurnover[]> {
-  const res = await fetch(`${API_URL}/api/analytics/inventory-turnover`);
+  const res = await fetch(`${API_URL}/api/analytics/inventory-turnover`, {
+  headers: getAuthHeaders(),
+});
   if (!res.ok) throw new Error("Failed to fetch inventory turnover");
   return res.json();
 }
