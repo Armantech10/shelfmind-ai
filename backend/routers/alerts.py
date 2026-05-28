@@ -43,7 +43,7 @@ def scan_alerts(
 
         # 2. expiry_warning
         if p.expiry_date:
-            days_to_expiry = (p.expiry_date - now.date()).days
+          days_to_expiry = (p.expiry_date.date() - now.date()).days
             if 0 <= days_to_expiry <= 7:
                 _create_or_update_alert(
                     db, current_user.id, p.id,
