@@ -42,16 +42,17 @@ def scan_alerts(
             )
 
         # 2. expiry_warning
-        if p.expiry_date:
-          days_to_expiry = (p.expiry_date.date() - now.date()).days
-            if 0 <= days_to_expiry <= 7:
-                _create_or_update_alert(
-                    db, current_user.id, p.id,
-                    alert_type="expiry_warning",
-                    title=f"Expiring Soon: {p.name}",
-                    message=f"Product will expire in {days_to_expiry} days on {p.expiry_date}.",
-                    severity=models.AlertSeverity.high
-                )
+      if p.expiry_date:
+    days_to_expiry = (p.expiry_date.date() - now.date()).days
+
+    if 0 <= days_to_expiry <= 7:
+        _create_or_update_alert(
+            db, current_user.id, p.id,
+            alert_type="expiry_warning",
+            title=f"Expiring Soon: {p.name}",
+            message=f"Product will expire in {days_to_expiry} days on {p.expiry_date}.",
+            severity=models.AlertSeverity.high
+        )
             elif days_to_expiry < 0:
                 _create_or_update_alert(
                     db, current_user.id, p.id,
