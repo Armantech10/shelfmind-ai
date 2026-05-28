@@ -1,4 +1,10 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://shelfmind-ai.onrender.com";
+function getAuthHeaders() {
+  return {
+    "Content-Type": "application/json",
+    "Authorization": `Bearer ${localStorage.getItem("token")}`,
+  };
+}
 
 export interface AuthResponse {
   access_token: string;
