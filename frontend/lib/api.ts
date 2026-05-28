@@ -344,19 +344,27 @@ export interface Alert {
 }
 
 export async function getAlerts(): Promise<Alert[]> {
-  const res = await fetch(`${API_URL}/api/alerts`);
+  const res = await fetch(`${API_URL}/api/alerts`, {
+  headers: getAuthHeaders(),
+});
   if (!res.ok) throw new Error("Failed to fetch alerts");
   return res.json();
 }
 
 export async function scanAlerts(): Promise<{status: string}> {
-  const res = await fetch(`${API_URL}/api/alerts/scan`, { method: "POST" });
+const res = await fetch(`${API_URL}/api/alerts/scan`, {
+  method: "POST",
+  headers: getAuthHeaders(),
+});
   if (!res.ok) throw new Error("Failed to scan alerts");
   return res.json();
 }
 
 export async function markAlertAsRead(id: number): Promise<{status: string}> {
-  const res = await fetch(`${API_URL}/api/alerts/${id}/read`, { method: "PUT" });
+const res = await fetch(`${API_URL}/api/alerts/${id}/read`, {
+  method: "PUT",
+  headers: getAuthHeaders(),
+});
   if (!res.ok) throw new Error("Failed to mark alert as read");
   return res.json();
 }
