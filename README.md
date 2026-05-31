@@ -16,7 +16,7 @@
 
 ---
 
-## ✨ Key Features
+### ✨ Key Features
 
 - **🧠 Demand Forecasting:** Automated ARIMA models trained on historical sales to predict future needs with precision.
 - **⚡ Smart Reorder Engine:** Real-time stock level monitoring with automated reorder point calculations based on safety stock and stockout risk.
